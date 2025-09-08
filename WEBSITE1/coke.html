@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>Coca-Cola</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="nav">
+    <button class="menu-btn" aria-label="Toggle Menu">
+      <i class="ri-menu-3-fill"></i>
+    </button>
+    <div class="nav-part2">
+      <h5>Drinks</h5>
+      <h5>Categories</h5>
+      <h5>Buy Franchise</h5>
+      <div class="line"></div>
+      <img src="pngegg.png" alt="Coca-Cola logo" class="nav-logo">
+      <div class="line"></div>
+      <h5>Stores</h5>
+      <h5>Contact</h5>
+      <h5>Our Story</h5>
+    </div>
+    <i class="ri-search-2-line"></i>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="main">
+    <div class="left">
+      <h1>Your favourite <span>coke</span> just got reinvented.</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ad modi pariatur corrupti asperiores molestias.</p>
+      <div class="btn">
+        <button><i class="ri-shopping-bag-3-line"></i> Taste Now</button>
+        <button><i class="ri-heart-3-line"></i></button>
+      </div>
+    </div>
+
+    <div class="center">
+      <img src="dc8315bc1b01a863b64d92b8b3cb7e10.png" alt="Coca-Cola bottle">
+    </div>
+
+    <div class="right">
+      <h1>Coca-Cola Zero Sugar®</h1>
+      <div class="para">Presenting the new Coke Zero Sugar. Same great taste of Coke with Zero Sugar.¹</div>
+      <div class="para2">
+        It comes in following sizes:<br>
+        Cans: 180ml, 300ml, 330ml, 350ml, 6-pack 300ml<br>
+        PET: 250ml, 600ml, 750ml
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="contantx">
+    <div class="imgx">
+      <img src="klipartz.com.png" alt="Coca-Cola studio" class="content-img">
+    </div>
+    <div class="spf">
+      <h1>Coke Studio Bharat: Drink. Scan. Unlock Exclusive Music.</h1>
+      <button><span>Explore More</span></button>
+    </div>
+  </div>
+
+  <!-- Toggle Script -->
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const navPart2 = document.querySelector(".nav-part2");
+    menuBtn.addEventListener("click", () => {
+      navPart2.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
