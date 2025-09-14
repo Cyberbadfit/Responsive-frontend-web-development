@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hitman's Finix — Responsive</title>
+  <link rel="stylesheet" href="style_updated.css" />
+  <!-- Remixicon for small icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="brand"><i class="ri-crosshair-2-line" aria-hidden="true"></i><span>Hitman's Finix</span></div>
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <a href="#" class="nav-item">Home</a>
+      <a href="#" class="nav-item">About</a>
+      <a href="#" class="nav-item">Product</a>
+      <a href="#" class="nav-item">Service</a>
+      <a href="#" class="nav-item">Contact</a>
+    </nav>
+    <div class="actions-cta">
+      <button class="btn-primary" id="getNow">Get Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Open Menu"><i class="ri-menu-3-line"></i></button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu" hidden>
+    <a href="#" class="nav-item">Home</a>
+    <a href="#" class="nav-item">About</a>
+    <a href="#" class="nav-item">Product</a>
+    <a href="#" class="nav-item">Service</a>
+    <a href="#" class="nav-item">Contact</a>
+  </div>
+
+  <main class="hero" role="main">
+    <section class="hero-left">
+      <div class="eyebrow">we have all problems solution</div>
+      <h1 class="headline">We have professional contract killers for discreet missions</h1>
+      <p class="lead">Precision, discretion, and expertise. Our services are built on decades of experience. (Demo site — no real services offered.)</p>
+      <div class="btn-row">
+        <button class="btn-primary" id="ctaPrimary">Contact Agent</button>
+        <button class="btn-outline" id="ctaSecondary">Pricing</button>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="num">01</div>
+          <div class="desc">Discreet Operations</div>
+        </div>
+        <div class="feature">
+          <div class="num">02</div>
+          <div class="desc">Global Reach</div>
+        </div>
+        <div class="feature">
+          <div class="num">03</div>
+          <div class="desc">Verified Protocols</div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="hero-right">
+      <div class="image-wrap">
+        <img src="main.jpg" alt="Moody Portrait" id="heroImg">
+        <div class="glow" aria-hidden="true"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Hitman's Finix — Demo BY 'CYBERBADFIT'</div>
+      <div class="socials">
+        <a href="https://www.instagram.com/cyber_badfit?igsh=bWpyYWg1dW14cW1x" aria-label="instagram"><i class="ri-instagram-line"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
