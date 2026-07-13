@@ -57,6 +57,13 @@ This project focuses on creating responsive, scalable, and interactive user inte
   <img src="https://github.com/Cyberbadfit/Responsive-frontend-web-development/blob/main/WEBSITE2/screenshort1.png" alt="Screenshot 2" width="40%"/>  
 </p>
 
+<p align="center">
+  <img src="https://github.com/Cyberbadfit/Responsive-frontend-web-development/blob/main/E-Commerce%20Pharmacy%20Website/E%20COMM%20WEB%20PNG.png" width="40%"/>  
+</p>
+
+<p align="center">
+  <img src="https://github.com/Cyberbadfit/Responsive-frontend-web-development/blob/main/FlowTask%20-%20Modern%20To-Do%20List%20Web%20App/TO%20DO%20LIST%20WEB%20PNG.png" width="40%"/>  
+</p>
 ---
 
 ## 📬 Connect With Me  
