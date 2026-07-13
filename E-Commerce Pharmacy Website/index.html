@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Medics - Online Pharmacy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234CAF50'/%3E%3Cpath d='M30 50 L50 30 L70 50 L50 70 Z' fill='white'/%3E%3Ctext x='50' y='85' font-family='Arial' font-size='12' fill='white' text-anchor='middle'%3EUnity%3C/text%3E%3C/svg%3E" alt="Unity Medics" class="logo-img">
+                <span class="logo-text">Unity Medics</span>
+            </div>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('home')" class="nav-link active">Home</a></li>
+                <li><a href="#" onclick="showSection('about')" class="nav-link">About</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="nav-link">Contact Us</a></li>
+                <li><a href="#" onclick="openAuthModal()" class="nav-link"><i class="fas fa-user"></i> Login/Signup</a></li>
+                <li class="cart-icon">
+                    <a href="#" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <!-- Hero with Search -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Your Health, Our Priority</h1>
+                <p>Authentic medicines delivered to your doorstep</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search medicines, salts, brands..." onkeyup="searchMedicines()">
+                    <button class="btn-search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto Scrolling Banner -->
+        <div class="scrolling-banner">
+            <div class="banner-track" id="bannerTrack">
+                <!-- Images injected by JS -->
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="container">
+            <h2 class="section-title">Featured Medicines</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <h1>About Unity Medics</h1>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Presence</h3>
+                        <p>Connected with over 50+ countries worldwide, providing authentic healthcare solutions across borders.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-users"></i>
+                        <h3>User First</h3>
+                        <p>10M+ satisfied customers trust us for their daily medical needs with 99.9% delivery success rate.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certified</h3>
+                        <p>WHO GMP certified facilities ensuring highest quality standards for all medications.</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn github"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h1 class="section-title">Contact Us</h1>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>24/7 Helpline</h3>
+                        <p class="helpline">1800-UNITY-MED (1800-864-8963)</p>
+                        <p>Emergency support available round the clock</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>support@unitymedics.com</p>
+                        <p>care@unitymedics.com</p>
+                    </div>
+
+                    <button class="btn-chat" onclick="openChat()">
+                        <i class="fas fa-comments"></i> Chat With Us
+                    </button>
+                </div>
+
+                <div class="request-form">
+                    <h2>Request a Medicine</h2>
+                    <p>Can't find your medicine? Request it here.</p>
+                    <form id="medicineRequestForm" onsubmit="handleRequestSubmit(event)">
+                        <div class="form-group">
+                            <label>Medicine Name</label>
+                            <input type="text" required placeholder="Enter medicine name">
+                        </div>
+                        <div class="form-group">
+                            <label>Salt Composition</label>
+                            <input type="text" required placeholder="e.g., Paracetamol 500mg">
+                        </div>
+                        <div class="form-group">
+                            <label>Company/Manufacturer</label>
+                            <input type="text" placeholder="e.g., Cipla, Sun Pharma">
+                        </div>
+                        <button type="submit" class="btn-submit">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-modal">
+            <span class="close-btn" onclick="closeModal('productModal')">&times;</span>
+            <div class="product-detail" id="productDetail">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close-btn" onclick="closeModal('authModal')">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+                <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+            
+            <div id="loginForm" class="auth-form">
+                <h2>Welcome Back</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Login</button>
+                </form>
+            </div>
+
+            <div id="signupForm" class="auth-form hidden">
+                <h2>Create Account</h2>
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+            </div>
+            <div class="payment-methods">
+                <h4>Select Payment Method</h4>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cod" checked>
+                        <span><i class="fas fa-money-bill-wave"></i> Cash on Delivery</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="gpay">
+                        <span><i class="fab fa-google-pay"></i> Google Pay</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="paytm">
+                        <span><i class="fas fa-wallet"></i> Paytm</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="phonepe">
+                        <span><i class="fas fa-mobile-alt"></i> PhonePe</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="upi">
+                        <span><i class="fas fa-qrcode"></i> UPI</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card">
+                        <span><i class="fas fa-credit-card"></i> Card</span>
+                    </label>
+                </div>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h3><i class="fas fa-headset"></i> 24/7 Support</h3>
+            <button onclick="closeChat()">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg support">
+                <p>Hello! How can I help you today?</p>
+                <span class="time">Just now</span>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChat(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
