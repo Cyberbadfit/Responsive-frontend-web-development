@@ -64,6 +64,10 @@ This project focuses on creating responsive, scalable, and interactive user inte
 <p align="center">
   <img src="https://github.com/Cyberbadfit/Responsive-frontend-web-development/blob/main/FlowTask%20-%20Modern%20To-Do%20List%20Web%20App/TO%20DO%20LIST%20WEB%20PNG.png" width="40%"/>  
 </p>
+
+<p align="center">
+  <img src="https://github.com/Cyberbadfit/Responsive-frontend-web-development/blob/main/NEON%20CONNECT%204%20GAME/Screenshot%202026-07-14%20210146.png" width="40%"/>  
+</p>
 ---
 
 ## 📬 Connect With Me  
